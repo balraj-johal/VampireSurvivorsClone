@@ -13,8 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-	
-	
+
+
 func spawn():
 	# instantiate sword ability as child of player
 	instance = ability.instantiate() as Node2D
@@ -22,8 +22,7 @@ func spawn():
 	player.add_child(instance)
 	
 	# rotate to match player dir
-	instance.rotation = PI / 2 + player.rotation
-	print(rad_to_deg(instance.rotation))
+	instance.rotation = deg_to_rad(90)
 
 
 func _on_timer_timeout():
