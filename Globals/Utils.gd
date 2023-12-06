@@ -6,3 +6,4 @@ func get_player() -> Node2D:
 	if (!player):
 		push_error("No player node found.")
 	return player
+

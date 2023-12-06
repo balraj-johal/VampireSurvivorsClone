@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
-
 @export var maxSpeed: int = 5
 
-
 var target: Node2D
-
+var camera_shake: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target = Utils.get_player()
-	pass # Replace with function body.
+	camera_shake = CameraGlobal.get_game_camera_shake()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,4 +26,5 @@ func get_target_dir():
 
 
 func _on_area_2d_area_entered(area: Area2D):
+	camera_shake.add_trauma(0.25)
 	queue_free()
